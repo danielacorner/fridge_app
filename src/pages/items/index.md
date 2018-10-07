@@ -1,7 +1,7 @@
 ---
 templateKey: items-page
 path: /items
-title: Artworks of Hyeran Lee
+title: Recipes
 ---
 
 ### Shade-grown coffee
