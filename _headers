@@ -1,0 +1,59 @@
+## Created with gatsby-plugin-netlify
+
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+/fridge_app/about/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/ingredients/2016-12-17-making-sense-of-the-scaas-new-flavor-wheel/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/products/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/ingredients/2017-01-04-a-beginners-guide-to-brewing-with-chemex/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/recipes/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/ingredients/2017-01-04-just-in-small-batch-of-jamaican-blue-mountain-in-store-next-week/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/recipes/2018-9-24-correlation-ii/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/tags/flavor/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/tags/tasting/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/tags/brewing/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/tags/chemex/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/tags/jamaica/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/tags/green-beans/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/404/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/tags/
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
+/fridge_app/404.html
+  Link: </fridge_app/webpack-runtime-3e6bddbee1e4fcc23d35.js>; rel=preload; as=script
+  Link: </fridge_app/0-8c05e5ba8360bfe3ac47.js>; rel=preload; as=script
