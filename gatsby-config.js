@@ -7,6 +7,14 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
+      resolve: `@wapps/gatsby-plugin-material-ui`,
+      options: {
+        theme: {
+          primaryColor: '#9c27b0'
+        }
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
@@ -26,12 +34,6 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: []
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-material-ui',
-      options: {
-        pathToTheme: 'src/themes/default'
       }
     },
     {
