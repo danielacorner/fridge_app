@@ -3,11 +3,11 @@ import CMS from 'netlify-cms';
 import AboutPagePreview from './preview-templates/AboutPagePreview';
 import BlogPostPreview from './preview-templates/BlogPostPreview';
 import ProductPagePreview from './preview-templates/ProductPagePreview';
-import ItemsPagePreview from './preview-templates/ItemsPagePreview';
-import ItemPagePreview from './preview-templates/ItemPagePreview';
+import RecipesPagePreview from './preview-templates/RecipesPagePreview';
+import RecipePagePreview from './preview-templates/RecipePagePreview';
 
 CMS.registerPreviewTemplate('about', AboutPagePreview);
 CMS.registerPreviewTemplate('products', ProductPagePreview);
-CMS.registerPreviewTemplate('items', ItemsPagePreview);
+CMS.registerPreviewTemplate('recipes', RecipesPagePreview);
 CMS.registerPreviewTemplate('blog', BlogPostPreview);
-CMS.registerPreviewTemplate('item', ItemPagePreview);
+CMS.registerPreviewTemplate('recipe', RecipePagePreview);

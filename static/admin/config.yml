@@ -6,9 +6,9 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'item'
-    label: 'Item'
-    folder: 'src/pages/items'
+  - name: 'recipe'
+    label: 'Recipe'
+    folder: 'src/pages/recipes'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
@@ -16,7 +16,7 @@ collections:
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'item',
+          default: 'recipe',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
@@ -24,9 +24,9 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
 
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'src/pages/blog'
+  - name: 'ingredient'
+    label: 'Ingredient'
+    folder: 'src/pages/ingredients'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:

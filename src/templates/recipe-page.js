@@ -6,7 +6,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
-export const ItemPageTemplate = ({
+export const RecipePageTemplate = ({
   content,
   contentComponent,
   description,
@@ -46,7 +46,7 @@ export const ItemPageTemplate = ({
   );
 };
 
-ItemPageTemplate.propTypes = {
+RecipePageTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -54,16 +54,16 @@ ItemPageTemplate.propTypes = {
   helmet: PropTypes.instanceOf(Helmet)
 };
 
-const ItemPage = ({ data }) => {
+const RecipePage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <ItemPageTemplate
+      <RecipePageTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={<Helmet title={`${post.frontmatter.title} | Item`} />}
+        helmet={<Helmet title={`${post.frontmatter.title} | Recipe`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
@@ -71,16 +71,16 @@ const ItemPage = ({ data }) => {
   );
 };
 
-ItemPage.propTypes = {
+RecipePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object
   })
 };
 
-export default ItemPage;
+export default RecipePage;
 
 export const pageQuery = graphql`
-  query ItemPageByID($id: String!) {
+  query RecipePageByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html

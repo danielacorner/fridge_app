@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ItemsPageTemplate } from '../../templates/items-page';
+import { RecipesPageTemplate } from '../../templates/recipes-page';
 
-const ItemsPagePreview = ({ entry, widgetFor }) => (
-  <ItemsPageTemplate
+const RecipesPagePreview = ({ entry, widgetFor }) => (
+  <RecipesPageTemplate
     content={widgetFor('body')}
     title={entry.getIn(['data', 'title'])}
   />
 );
 
-ItemsPagePreview.propTypes = {
+RecipesPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func
   }),
   widgetFor: PropTypes.func
 };
 
-export default ItemsPagePreview;
+export default RecipesPagePreview;

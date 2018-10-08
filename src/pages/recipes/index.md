@@ -1,6 +1,6 @@
 ---
-templateKey: items-page
-path: /items
+templateKey: recipes-page
+path: /recipes
 title: Recipes
 ---
 

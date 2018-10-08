@@ -7,6 +7,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      }
+    },
+    {
       resolve: `@wapps/gatsby-plugin-material-ui`,
       options: {
         theme: {
@@ -42,6 +48,8 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`
       }
     },
+
     'gatsby-plugin-netlify' // make sure to keep it last in the array
-  ]
+  ],
+  pathPrefix: `/fridge_app`
 };
