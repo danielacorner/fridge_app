@@ -121,7 +121,7 @@ class Navbar extends Component {
                   Recipes
                 </IconText>
               </Link>
-              <Link className="navbar-item" to="/products">
+              <Link className="navbar-item" to="/ingredients">
                 <IconText>
                   <img
                     src="https://cdn0.iconfinder.com/data/icons/shopping-41/70/groceries-512.png"
@@ -131,7 +131,7 @@ class Navbar extends Component {
                   Ingredients
                 </IconText>
               </Link>
-              <Link className="navbar-item" to="/about">
+              <Link className="navbar-item" to="/fridge">
                 <IconText>
                   <img
                     src="https://lh3.googleusercontent.com/PquhjmNAwNX8A7GM1DIteRBX3nGLXtS52TL748pT2IfgoBf_apHanKKOT_tl9WPnB08=s180-rw"

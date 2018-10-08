@@ -3,7 +3,12 @@ module.exports = {
     title: 'Fridge App'
   },
   plugins: [
-    'gatsby-mdx',
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: ['.mdx', '.md']
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {

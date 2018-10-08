@@ -30,7 +30,7 @@ class SideNav extends React.Component {
           </ListItem>
         </Link>
         <Divider style={{ marginTop: 1 }} />
-        <Link className="navbar-item" to="/products">
+        <Link className="navbar-item" to="/ingredients">
           <ListItem>
             <IconText>
               <img
@@ -43,7 +43,7 @@ class SideNav extends React.Component {
           </ListItem>
         </Link>
         <Divider />
-        <Link className="navbar-item" to="/about">
+        <Link className="navbar-item" to="/fridge">
           <ListItem>
             <IconText>
               <img

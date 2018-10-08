@@ -1,6 +1,4 @@
-Current Goal: create navbar with recipes / ingredients / fridge
-
-- create recipe page
+Current Goal: create recipe page
 
 - create ingredient page
 

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql /* Link */ } from 'gatsby';
 import Layout from '../components/Layout';
+import Recipe from '../components/Recipe';
 import Content, { HTMLContent } from '../components/Content';
 
 export const RecipesPageTemplate = ({ title, content, contentComponent }) => {
@@ -39,6 +40,7 @@ const RecipesPage = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
       />
+      {<Recipe />}
     </Layout>
   );
 };
