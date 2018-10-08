@@ -55,7 +55,6 @@ class Navbar extends Component {
       ? Math.min(-64 - scrollPosSinceScrollingDown + scrollPos, 0)
       : Math.max(scrollPos - scrollPosSinceScrollingUp, -64);
     const scrolledPastNav = navMarginTop <= -64;
-    const scrollingUpAmount = scrollPosSinceScrollingUp;
     this.setState({
       scrollingDown,
       scrollPos,
@@ -66,7 +65,6 @@ class Navbar extends Component {
     });
   };
   handleResize = () => {
-    console.log('hey! resizing over here');
     this.setState({ isMobile: window.innerWidth <= BREAKPOINTS.mobile });
   };
   openMenu(bool) {

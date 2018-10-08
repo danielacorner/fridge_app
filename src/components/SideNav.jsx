@@ -1,43 +1,60 @@
 import React from 'react';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import StarIcon from '@material-ui/icons/Star';
-import SendIcon from '@material-ui/icons/Send';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import Divider from '@material-ui/core/Divider';
 
+const IconText = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+  align-items: center;
+`;
 class SideNav extends React.Component {
   render() {
     const sideList = (
       <List style={{ width: 250 }}>
-        <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <ListItemText primary="Inbox" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <StarIcon />
-          </ListItemIcon>
-          <ListItemText primary="Starred" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <SendIcon />
-          </ListItemIcon>
-          <ListItemText primary="Send mail" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <DraftsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Drafts" />
-        </ListItem>
+        <Link className="navbar-item" to="/recipes">
+          <ListItem>
+            <IconText>
+              <img
+                src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png"
+                alt="Fridge"
+                style={{ height: 40, width: 'auto' }}
+              />
+              <ListItemText primary="Recipes" />
+            </IconText>
+          </ListItem>
+        </Link>
+        <Divider style={{ marginTop: 1 }} />
+        <Link className="navbar-item" to="/products">
+          <ListItem>
+            <IconText>
+              <img
+                src="https://cdn0.iconfinder.com/data/icons/shopping-41/70/groceries-512.png"
+                alt="Fridge"
+                style={{ height: 40, width: 'auto' }}
+              />
+              <ListItemText primary="Ingredients" />
+            </IconText>
+          </ListItem>
+        </Link>
+        <Divider />
+        <Link className="navbar-item" to="/about">
+          <ListItem>
+            <IconText>
+              <img
+                src="https://lh3.googleusercontent.com/PquhjmNAwNX8A7GM1DIteRBX3nGLXtS52TL748pT2IfgoBf_apHanKKOT_tl9WPnB08=s180-rw"
+                alt="Fridge"
+                style={{ height: 40, width: 'auto' }}
+              />
+              <ListItemText primary="My Fridge" />
+            </IconText>
+          </ListItem>
+        </Link>
       </List>
     );
 
