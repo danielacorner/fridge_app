@@ -1,7 +1,7 @@
 ---
-templateKey: 'ingredient-page'
-path: /ingredient
-title: Ingredient 1
+templateKey: 'ingredients-page'
+path: /ingredients
+title: Ingredients page
 ---
 
 ### Shade-grown coffee

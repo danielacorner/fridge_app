@@ -50,8 +50,8 @@ RecipePageTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.instanceOf(Helmet)
+  title: PropTypes.string
+  // helmet: PropTypes.instanceOf(Helmet)
 };
 
 const RecipePage = ({ data }) => {
@@ -63,7 +63,7 @@ const RecipePage = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        // helmet={<Helmet title={`${post.frontmatter.title} | Recipe`} />}
+        helmet={<Helmet title={`${post.frontmatter.title} | Recipe`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
