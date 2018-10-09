@@ -1,5 +1,13 @@
-Current Goal: create recipe page
+Current Goal: clean up & remove all extra text, fields
 
-- create ingredient page
+- create recipes page from index page
+
+- create recipe page
+
+- add ingredients to tags
 
 - create fridge page
+  - kanban:
+    - my recipes
+    - my fridge
+    - my favourites

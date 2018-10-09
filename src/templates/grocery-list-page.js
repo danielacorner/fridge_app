@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
-export const IngredientsPageTemplate = ({
+export const GroceryListPageTemplate = ({
   title,
   content,
   contentComponent
@@ -29,18 +29,18 @@ export const IngredientsPageTemplate = ({
   );
 };
 
-IngredientsPageTemplate.propTypes = {
+GroceryListPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func
 };
 
-const IngredientPage = ({ data }) => {
+const GroceryListPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <IngredientsPageTemplate
+      <GroceryListPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
@@ -49,14 +49,14 @@ const IngredientPage = ({ data }) => {
   );
 };
 
-IngredientPage.propTypes = {
+GroceryListPage.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export default IngredientPage;
+export default GroceryListPage;
 
-export const ingredientsPageQuery = graphql`
-  query IngredientsPage($id: String!) {
+export const GroceryListPageQuery = graphql`
+  query GroceryListPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {

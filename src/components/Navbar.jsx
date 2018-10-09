@@ -121,14 +121,14 @@ class Navbar extends Component {
                   Recipes
                 </IconText>
               </Link>
-              <Link className="navbar-item" to="/ingredients">
+              <Link className="navbar-item" to="/grocery-list">
                 <IconText>
                   <img
                     src="https://cdn0.iconfinder.com/data/icons/shopping-41/70/groceries-512.png"
                     alt="Fridge"
                     style={{ height: 40, width: 'auto' }}
                   />
-                  Ingredients
+                  Grocery List
                 </IconText>
               </Link>
               <Link className="navbar-item" to="/fridge">
