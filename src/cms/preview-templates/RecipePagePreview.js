@@ -4,10 +4,13 @@ import { RecipePageTemplate } from '../../templates/recipe-page';
 
 const RecipePagePreview = ({ entry, widgetFor }) => (
   <RecipePageTemplate
-    content={widgetFor('body')}
-    description={entry.getIn(['data', 'description'])}
-    tags={entry.getIn(['data', 'tags'])}
     title={entry.getIn(['data', 'title'])}
+    serves={entry.getIn(['data', 'serves'])}
+    ingredients={entry.getIn(['data', 'ingredients'])}
+    minutes={entry.getIn(['data', 'minutes'])}
+    description={entry.getIn(['data', 'description'])}
+    content={widgetFor('body')}
+    tags={entry.getIn(['data', 'tags'])}
   />
 );
 

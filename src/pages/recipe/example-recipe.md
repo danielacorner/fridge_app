@@ -1,12 +1,16 @@
 ---
 templateKey: 'recipe-page'
 path: /recipe-example
-title: Recipe-Example
+title: Hot Potatoes
+image: https://picsum.photos/500/501
 date: '2018-10-04'
 popularity: 4
-image: /img/jumbotron.jpg
-heading: A Recipe Heading
-description: Here's a recipe page. It has steps and ingredients up-front. This recipe tastes delcious!
+minutes: 30
+serves: 2
+description: >
+  Here's a recipe page. 
+  It has steps and ingredients up-front. 
+  This recipe tastes delcious!
 ingredients: >-
   - [ 1, whole, tomato ]
   - [ 2, cup, butter ]
@@ -17,4 +21,7 @@ instructions: >-
   - use all the butter very cautiously
   - defenestrate your inhibitious
   - congratulation
+tags:
+  - flavor
+  - tasting
 ---

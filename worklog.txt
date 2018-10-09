@@ -1,6 +1,6 @@
-Current Goal: clean up & remove all extra text, fields
+Current Goal: design recipes page
+- css grid layout of mat-ui cards
 
-- create recipes page from index page
 
 - create recipe page
 

@@ -85,9 +85,12 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        path
         title
-        description
+        image
+        path
+        minutes
+        serves
+        templateKey
         tags
       }
     }
