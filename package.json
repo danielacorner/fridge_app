@@ -58,8 +58,10 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "@hint/configuration-development": "^1.1.1",
     "@mdx-js/loader": "^0.15.5",
     "gh-pages": "^2.0.1",
+    "hint": "^3.4.9",
     "loader-utils": "^1.1.0",
     "prettier": "^1.7.4",
     "rimraf": "^2.6.2"

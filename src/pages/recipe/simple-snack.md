@@ -1,7 +1,9 @@
 ---
 templateKey: recipe-page
 title: Simple-Snack
-date: 2016-12-17T15:04:10.000Z
+path: /simple-snack
+popularity: 5
+date: '2018-10-05'
 description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
 tags:
   - flavor

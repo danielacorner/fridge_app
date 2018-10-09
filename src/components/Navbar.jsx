@@ -115,7 +115,7 @@ class Navbar extends Component {
                 <IconText>
                   <img
                     src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png"
-                    alt="Fridge"
+                    alt="Recipes"
                     style={{ height: 40, width: 'auto' }}
                   />
                   Recipes
@@ -125,7 +125,7 @@ class Navbar extends Component {
                 <IconText>
                   <img
                     src="https://cdn0.iconfinder.com/data/icons/shopping-41/70/groceries-512.png"
-                    alt="Fridge"
+                    alt="Grocery List"
                     style={{ height: 40, width: 'auto' }}
                   />
                   Grocery List
@@ -135,7 +135,7 @@ class Navbar extends Component {
                 <IconText>
                   <img
                     src="https://lh3.googleusercontent.com/PquhjmNAwNX8A7GM1DIteRBX3nGLXtS52TL748pT2IfgoBf_apHanKKOT_tl9WPnB08=s180-rw"
-                    alt="Fridge"
+                    alt="My Fridge"
                     style={{ height: 40, width: 'auto' }}
                   />
                   My Fridge

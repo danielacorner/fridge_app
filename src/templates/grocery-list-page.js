@@ -60,6 +60,7 @@ export const GroceryListPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
+        path
         title
       }
     }
