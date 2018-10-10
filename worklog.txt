@@ -1,7 +1,7 @@
-Current Goal: design recipes page
-- css grid layout of mat-ui cards
-
+Current Goal:
 - create submit a recipe form
+
+- design recipe page
 
 - create recipe page
 

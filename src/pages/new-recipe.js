@@ -1,15 +1,13 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import ClockIcon from '@material-ui/icons/AccessTime';
 import PeopleIcon from '@material-ui/icons/SupervisedUserCircle';
 import Button from '@material-ui/core/Button';
 
-class Recipes extends React.Component {
+class NewRecipe extends React.Component {
   render() {
-    const { edges: recipes } = this.props.data.allMarkdownRemark;
-
     const randomPastelColour = () => {
       return `hsl(${Math.random() * 255},25%,90%)`;
     };
@@ -157,84 +155,16 @@ class Recipes extends React.Component {
       }
     `;
 
-    console.log(recipes);
     return (
       <Layout>
         <Header>
           <h1>Recipes!</h1>
           <Button>Submit a Recipe</Button>
         </Header>
-        <Grid>
-          {recipes.map(rec => {
-            const { id } = rec.node;
-            const { title, image, description } = rec.node.frontmatter;
-            const maxTitleChars = 20;
-            const maxDescChars = 59;
-            return (
-              <RecipeCard key={id} style={{ background: randomPastelColour() }}>
-                <div className="card_contents">
-                  <div className="image_div">
-                    <img src={image} alt={title} />
-                    <div className="img_overlay">
-                      <Link to={id}>View Recipe</Link>
-                      <button onClick={() => console.log('add')}>
-                        Add to Grocery List
-                      </button>
-                      <button onClick={() => console.log('save')}>
-                        Save for Later
-                      </button>
-                    </div>
-                  </div>
-                  <div>
-                    <h3>
-                      {title.length < maxTitleChars
-                        ? title
-                        : title.substr(0, maxTitleChars) + '...'}
-                    </h3>
-                  </div>
-                  <div className="details">
-                    <span>
-                      <ClockIcon /> 10 min
-                    </span>
-                    <span>
-                      <PeopleIcon />
-                      10 servings
-                    </span>
-                  </div>
-                  <p>
-                    {description.length < maxDescChars
-                      ? description
-                      : description.substr(0, maxDescChars) + '...'}
-                  </p>
-                </div>
-              </RecipeCard>
-            );
-          })}
-        </Grid>
+        <Grid>inputs</Grid>
       </Layout>
     );
   }
 }
 
-export default Recipes;
-export const recipesQuery = graphql`
-  query RecipePages {
-    allMarkdownRemark(
-      limit: 10
-      filter: { frontmatter: { templateKey: { eq: "recipe-page" } } }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            image
-            description
-            path
-            templateKey
-          }
-        }
-      }
-    }
-  }
-`;
+export default NewRecipe;
