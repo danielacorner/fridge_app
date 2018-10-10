@@ -162,7 +162,9 @@ class Recipes extends React.Component {
       <Layout>
         <Header>
           <h1>Recipes!</h1>
-          <Button>Submit a Recipe</Button>
+          <Link to="new-recipe">
+            <Button>Submit a Recipe</Button>
+          </Link>
         </Header>
         <Grid>
           {recipes.map(rec => {
