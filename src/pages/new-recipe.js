@@ -177,8 +177,7 @@ class NewRecipe extends React.Component {
             required
             label="Name"
             className="textField"
-            value={this.state.name}
-            onChange={this.handleChange('title')}
+            onChange={() => this.handleChange('title')}
             margin="normal"
             variant="outlined"
           />
@@ -186,8 +185,7 @@ class NewRecipe extends React.Component {
             required
             label="Image URL"
             className="textField"
-            value={this.state.image}
-            onChange={this.handleChange('image')}
+            onChange={() => this.handleChange('image')}
             margin="normal"
             variant="outlined"
           />
@@ -197,8 +195,7 @@ class NewRecipe extends React.Component {
               label="Servings"
               type="number"
               className="textField numField"
-              value={this.state.serves || ''}
-              onChange={this.handleChange('serves')}
+              onChange={() => this.handleChange('serves')}
               margin="normal"
               variant="outlined"
             />
@@ -206,8 +203,7 @@ class NewRecipe extends React.Component {
               required
               label="Time (minutes)"
               type="number"
-              value={this.state.minutes || ''}
-              onChange={this.handleChange('minutes')}
+              onChange={() => this.handleChange('minutes')}
               className="textField numField"
               margin="normal"
               variant="outlined"
@@ -217,8 +213,7 @@ class NewRecipe extends React.Component {
             label="Description"
             multiline
             rowsMax="4"
-            value={this.state.description}
-            onChange={this.handleChange('description')}
+            onChange={() => this.handleChange('description')}
             className="textField"
             margin="normal"
             helperText="Write a short description for your recipe"
@@ -230,33 +225,30 @@ class NewRecipe extends React.Component {
               return (
                 <div className="ingGrid" key={ing.id}>
                   <TextField
-                    value={ing.ingredient}
                     label="Ingredient"
-                    onChange={this.handleChange(
-                      `ingredients[${index}].ingredient`
-                    )}
+                    onChange={() =>
+                      this.handleChange(`ingredients[${index}].ingredient`)
+                    }
                     className="textField"
                     margin="normal"
                     helperText="Please use the singular form: onion, tomato, etc."
                     variant="outlined"
                   />
                   <TextField
-                    value={ing.quantity}
                     type="number"
                     label="Quantity"
-                    onChange={this.handleChange(
-                      `ingredients[${index}].quantity`
-                    )}
+                    onChange={() =>
+                      this.handleChange(`ingredients[${index}].quantity`)
+                    }
                     className="textField"
                     margin="normal"
                     variant="outlined"
                   />
                   <TextField
-                    value={ing.measure}
                     label="Measure"
-                    onChange={this.handleChange(
-                      `ingredients[${index}].measure`
-                    )}
+                    onChange={() =>
+                      this.handleChange(`ingredients[${index}].measure`)
+                    }
                     className="textField"
                     margin="normal"
                     helperText="unit: tbsp, tsp, cup, g, etc."
@@ -286,11 +278,10 @@ class NewRecipe extends React.Component {
               return (
                 <div className="instGrid" key={inst.id}>
                   <TextField
-                    value={inst.instruction}
                     label={`step ${index + 1}`}
-                    onChange={this.handleChange(
-                      `instructions[${index}].instruction`
-                    )}
+                    onChange={() =>
+                      this.handleChange(`instructions[${index}].instruction`)
+                    }
                     className="textField"
                     multiline
                     max-rows="6"
