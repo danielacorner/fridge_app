@@ -8,175 +8,47 @@ public_folder: /img
 collections:
   - name: 'recipe'
     label: 'Recipe'
-    folder: 'src/pages/recipes'
+    folder: 'src/pages/recipe'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - {
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'recipe',
+          default: 'recipe-page',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Servings', name: 'serves', widget: 'number' }
+      - { label: 'Time (minutes)', name: 'minutes', widget: 'number' }
       - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
-
-  - name: 'ingredient'
-    label: 'Ingredient'
-    folder: 'src/pages/ingredients'
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - label: 'Ingredients'
+        name: 'ingredients'
+        widget: 'list'
+        fields:
+          - { label: 'Ingredient', name: 'ingredient', widget: 'string' }
+          - { label: 'Quantity', name: 'quantity', widget: 'number' }
+          - { label: 'Measure', name: 'measure', widget: 'string' }
+      - label: 'Instructions'
+        name: 'instructions'
+        widget: 'list'
+        field:
+          - { label: 'step', name: 'instruction', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+  - name: 'grocery-list'
+    label: 'GroceryList'
+    folder: 'src/pages/grocery-list'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - {
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'item',
+          default: 'grocery-list',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
-
-  - name: 'pages'
-    label: 'Pages'
-    files:
-      - file: 'src/pages/items/index.md'
-        label: 'Items'
-        name: 'items'
-        fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'items-page',
-            }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-      - file: 'src/pages/about/index.md'
-        label: 'About'
-        name: 'about'
-        fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'about-page',
-            }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-      - file: 'src/pages/products/index.md'
-        label: 'Products Page'
-        name: 'products'
-        fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'product-page',
-            }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Testimonials,
-              name: testimonials,
-              widget: list,
-              fields:
-                [
-                  { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
-                ],
-            }
-          - { label: Full_image, name: full_image, widget: image }
-          - {
-              label: Pricing,
-              name: pricing,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: string },
-                  {
-                    label: Plans,
-                    name: plans,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Plan, name: plan, widget: string },
-                        { label: Price, name: price, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: string,
-                        },
-                        { label: Items, name: items, widget: list },
-                      ],
-                  },
-                ],
-            }

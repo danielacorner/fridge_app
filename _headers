@@ -6,54 +6,81 @@
   X-Content-Type-Options: nosniff
 /static/*
   Cache-Control: public, max-age=31536000, immutable
-/fridge_app/about/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/products/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/ingredients/2017-01-04-a-beginners-guide-to-brewing-with-chemex/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/recipes/2018-9-24-correlation-ii/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/ingredients/2016-12-17-making-sense-of-the-scaas-new-flavor-wheel/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/ingredients/2017-01-04-just-in-small-batch-of-jamaican-blue-mountain-in-store-next-week/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/recipes/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/tags/brewing/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/tags/chemex/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/tags/flavor/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
+/fridge_app/fc476274-b805-5b43-b7be-798bc60ef900
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/d0208538-f98e-5452-a6f8-5d430a6ab216
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/ad71fe19-dc3e-5dcf-ad15-f4f5b0f4a892
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/65f194e0-4925-5155-8c68-d8478826fb18
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/6fd57b89-0151-50b4-9c6b-db3b1ad59110
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/74b49f23-f6a1-54fc-9c5c-dda21428a2ca
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/tags/possible/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/tags/impossible/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/tags/super-duper/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
 /fridge_app/tags/tasting/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/tags/jamaica/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
-/fridge_app/tags/green-beans/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/tags/flavor/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/tags/churro/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/tags/potato/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
 /fridge_app/404/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/fridge/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
 /fridge_app/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/new-recipe/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/recipes/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
 /fridge_app/tags/
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
 /fridge_app/404.html
-  Link: </fridge_app/webpack-runtime-97f587a4f4c1deb9657f.js>; rel=preload; as=script
-  Link: </fridge_app/0-7cf6c78c9f5d314c46e9.js>; rel=preload; as=script
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/0-4544707fdb7f45205249.js>; rel=preload; as=script
+/fridge_app/recipe/example-recipe/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/component---src-pages-recipe-example-recipe-md-18bedb0e3fc628f45b5a.js>; rel=preload; as=script
+/fridge_app/recipe/hey-i-m-a-recipe-over-here/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/component---src-pages-recipe-hey-i-m-a-recipe-over-here-md-9286b7931ce42c786b80.js>; rel=preload; as=script
+/fridge_app/recipe/simple-snack/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/component---src-pages-recipe-simple-snack-md-1b9a5738515dd863c410.js>; rel=preload; as=script
+/fridge_app/recipe/shallots-and-wine/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/component---src-pages-recipe-shallots-and-wine-md-30ecf9a1665cdfeb146c.js>; rel=preload; as=script
+/fridge_app/recipe/unique-pomelo/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/component---src-pages-recipe-unique-pomelo-md-bb51444ba28bb62a39c2.js>; rel=preload; as=script
+/fridge_app/grocery-list/
+  Link: </fridge_app/webpack-runtime-737f171f147674dafe2e.js>; rel=preload; as=script
+  Link: </fridge_app/component---src-pages-grocery-list-index-md-df67a794a826841f8e79.js>; rel=preload; as=script
