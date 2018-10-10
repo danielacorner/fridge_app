@@ -5,28 +5,31 @@ import { Link, graphql } from 'gatsby';
 
 class Recipes extends React.Component {
   render() {
-    const { data } = this.props;
-    const { edges: recipes } = data.allMarkdownRemark;
+    const { edges: recipes } = this.props.data.allMarkdownRemark;
+
+    const randomPastelColour = () => {
+      return `hsl(${Math.random() * 255},25%,90%)`;
+    };
 
     const PageTitle = styled.h1`
+      padding-top: 8px;
       display: grid;
       width: 100%;
       justify-items: center;
       font-size: 36px;
-      text-decoration: underline;
     `;
 
     const Grid = styled.div`
+      padding: 20px;
       display: grid;
-      grid-gap: 10px;
+      /* grid-gap: 10px; */
       grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+      width: 100%;
     `;
 
     const RecipeCard = styled.div`
       width: 100%;
       max-height: 325px;
-      margin: 40px;
-      background: #eaeaea;
       .card_contents {
         padding: 15px;
         width: 100%;
@@ -52,7 +55,6 @@ class Recipes extends React.Component {
         }
         transition: all 0.3s ease-out;
         &:hover {
-          box-shadow: 0px 3px 11px 1px rgba(0, 0, 0, 0.2);
           .image_div {
             box-shadow: 0px 3px 11px 1px #00000087;
             img {
@@ -129,7 +131,7 @@ class Recipes extends React.Component {
             const maxTitleChars = 20;
             const maxDescChars = 59;
             return (
-              <RecipeCard key={id}>
+              <RecipeCard key={id} style={{ background: randomPastelColour() }}>
                 <div className="card_contents">
                   <div className="image_div">
                     <img src={image} alt={title} />
