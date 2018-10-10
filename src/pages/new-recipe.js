@@ -170,6 +170,7 @@ class NewRecipe extends React.Component {
           autoComplete="off"
           name="new-recipe"
           method="post"
+          netlify
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >

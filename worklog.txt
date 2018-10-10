@@ -1,5 +1,6 @@
 Current Goal:
-- create submit a recipe form
+- debug: form clears on add ingredient
+-
 
 - design recipe page
 
