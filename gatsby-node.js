@@ -30,8 +30,9 @@ exports.createPages = ({ actions, graphql }) => {
 
     recipes.forEach(edge => {
       const id = edge.node.id;
+      const { minutes, serves, image } = edge.node.frontmatter;
       createPage({
-        path: edge.node.frontmatter.path,
+        path: edge.node.id,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`

@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 const Recipes = ({ data }) => {
   const { edges: recipes } = data.allMarkdownRemark;
@@ -22,19 +22,46 @@ const Recipes = ({ data }) => {
 
   const RecipeCard = styled.div`
     width: 100%;
+    max-height: 325px;
     margin: 40px;
     background: #eaeaea;
-    display: grid;
-    grid-template: 1/1;
-    overflow: hidden;
     .card_contents {
       padding: 15px;
-      grid-column: 1/-1;
-      grid-row: 1/-1;
       width: 100%;
       height: 100%;
+      display: grid;
+      grid-gap: 5px;
+      grid-template-rows: 1fr auto auto;
+      grid-row: 1/-1;
+      grid-column: 1/-1;
+      .image_div {
+        overflow: hidden;
+        display: grid;
+        min-height: 200px;
+        img {
+          grid-row: 1/-1;
+          grid-column: 1/-1;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+        transition: all 0.3s ease-out;
+        &:hover {
+          box-shadow: 0px 3px 11px 1px #00000087;
+          .img_overlay {
+            transform: translateY(0);
+          }
+        }
+      }
+      h3 {
+        font-size: 20px;
+        font-style: italic;
+      }
+      p {
+        font-size: 14px;
+      }
     }
-    .card_overlay {
+    .img_overlay {
       grid-column: 1/-1;
       grid-row: 1/-1;
       width: 100%;
@@ -44,22 +71,24 @@ const Recipes = ({ data }) => {
       align-content: center;
       /* grid-template: 1/3; */
       background: rgba(63, 72, 125, 0.6);
-      button {
+      button,
+      a {
+        cursor: pointer;
         background: none;
         border: 2px solid rgba(255, 255, 255, 0.9);
         color: white;
         text-transform: uppercase;
         background: (0, 0, 0, 0.7);
-        padding: 5px;
+        padding: 5px 10px;
         margin: 5px 0;
+        font-size: 14px;
+        transition: all 0.2s ease-out;
+        &:hover {
+          box-shadow: 0px 3px 7px 1px #00000087;
+        }
       }
       transform: translateY(100%);
       transition: all 0.3s ease-in-out;
-    }
-    &:hover {
-      .card_overlay {
-        transform: translateY(0);
-      }
     }
   `;
 
@@ -71,17 +100,33 @@ const Recipes = ({ data }) => {
         {recipes.map(rec => {
           const { id } = rec.node;
           const { title, image, description } = rec.node.frontmatter;
+          const maxTitleChars = 20;
+          const maxDescChars = 59;
           return (
             <RecipeCard key={id}>
               <div className="card_contents">
-                <img src={image} alt={title} />
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </div>
-              <div className="card_overlay">
-                <button>View Recipe</button>
-                <button>Add to Grocery List</button>
-                <button>Save for Later</button>
+                <div className="image_div">
+                  <img src={image} alt={title} />
+                  <div className="img_overlay">
+                    <Link to={id}>View Recipe</Link>
+                    <button onClick={() => console.log('add')}>
+                      Add to Grocery List
+                    </button>
+                    <button onClick={() => console.log('save')}>
+                      Save for Later
+                    </button>
+                  </div>
+                </div>
+                <h3>
+                  {title.length < maxTitleChars
+                    ? title
+                    : title.substr(0, maxTitleChars) + '...'}
+                </h3>
+                <p>
+                  {description.length < maxDescChars
+                    ? description
+                    : description.substr(0, maxDescChars) + '...'}
+                </p>
               </div>
             </RecipeCard>
           );
@@ -104,9 +149,8 @@ export const recipesQuery = graphql`
           frontmatter {
             title
             image
+            description
             path
-            minutes
-            serves
             templateKey
           }
         }

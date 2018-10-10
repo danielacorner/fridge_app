@@ -1,9 +1,10 @@
 ---
-templateKey: recipe
+templateKey: recipe-page
 title: Hey I'm a Recipe Over Here
 date: 2018-10-09T20:40:50.935Z
-serves: '1'
-minutes: '9001'
+serves: 1
+image: https://picsum.photos/501/501
+minutes: 9001
 description: This recipe is impossible -- don't even bother.
 ingredients:
   - ingredient: tomato bisque
@@ -11,10 +12,10 @@ ingredients:
     quantity: '1'
   - ingredient: tuna salad
     measure: bears
-    quantity: '50'
+    quantity: 50
   - ingredient: impossible sauce
     measure: loaves
-    quantity: '98'
+    quantity: 98
 instructions:
   - prepare the awesome sauce
   - drink it
@@ -24,6 +25,6 @@ tags:
   - impossible
   - super-duper
   - tasting
-  - ''
 ---
+
 Here's an optional story about that time I tried to make impossible sauce and failed. Why am I even writing about it? So you don't feel as bad.

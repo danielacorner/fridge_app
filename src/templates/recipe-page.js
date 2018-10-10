@@ -55,17 +55,17 @@ RecipePageTemplate.propTypes = {
 };
 
 const RecipePage = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { markdownRemark: recipe } = data;
 
   return (
     <Layout>
       <RecipePageTemplate
-        content={post.html}
+        content={recipe.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={<Helmet title={`${post.frontmatter.title} | Recipe`} />}
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
+        description={recipe.frontmatter.description}
+        helmet={<Helmet title={`${recipe.frontmatter.title} | Recipe`} />}
+        tags={recipe.frontmatter.tags}
+        title={recipe.frontmatter.title}
       />
     </Layout>
   );
@@ -86,10 +86,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        image
         path
-        minutes
-        serves
         templateKey
         tags
       }

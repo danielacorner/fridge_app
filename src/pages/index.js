@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { edges: recipes } = data.allMarkdownRemark;
 
     return (
       <Layout>
@@ -15,24 +15,30 @@ export default class IndexPage extends React.Component {
             <div className="content">
               <h1 className="has-text-weight-bold is-size-2">Latest Recipes</h1>
             </div>
-            {posts.map(({ node: post }) => (
+            {recipes.map(({ node: recipe }) => (
               <div
                 className="content"
                 style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                key={post.id}
+                key={recipe.id}
               >
                 <p>
-                  <Link className="has-text-primary" to={post.frontmatter.path}>
-                    {post.frontmatter.title}
+                  <Link
+                    className="has-text-primary"
+                    to={recipe.frontmatter.path}
+                  >
+                    {recipe.frontmatter.title}
                   </Link>
                   <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{recipe.frontmatter.date}</small>
                 </p>
                 <p>
-                  {post.excerpt}
+                  {recipe.description}
                   <br />
                   <br />
-                  <Link className="button is-small" to={post.frontmatter.path}>
+                  <Link
+                    className="button is-small"
+                    to={recipe.frontmatter.path}
+                  >
                     Keep Reading →
                   </Link>
                 </p>
@@ -62,6 +68,7 @@ export const pageQuery = graphql`
           frontmatter {
             path
             title
+            image
             templateKey
           }
         }
