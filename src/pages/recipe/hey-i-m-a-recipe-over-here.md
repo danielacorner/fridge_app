@@ -9,7 +9,7 @@ description: This recipe is impossible -- don't even bother.
 ingredients:
   - ingredient: tomato bisque
     measure: kilogram
-    quantity: '1'
+    quantity: 1
   - ingredient: tuna salad
     measure: bears
     quantity: 50

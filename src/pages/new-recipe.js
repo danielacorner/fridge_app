@@ -4,18 +4,73 @@ import styled from 'styled-components';
 // import { Link } from 'gatsby';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
+import CloseIcon from '@material-ui/icons/Close';
 
 class NewRecipe extends React.Component {
   state = {
-    name: 'Cat in the Hat',
-    age: '',
-    multiline: 'Controlled',
-    currency: 'EUR'
+    templateKey: 'recipe-page',
+    title: '',
+    serves: '',
+    minutes: '',
+    description: '',
+    image: '',
+    ingredients: [
+      { id: 0, ingredient: '', measure: '', quantity: '' },
+      { id: 1, ingredient: '', measure: '', quantity: '' }
+    ],
+    instructions: [{ id: 0, instruction: '' }, { id: 1, instruction: '' }],
+    tags: []
   };
 
   handleChange = name => event => {
     this.setState({
       [name]: event.target.value
+    });
+  };
+
+  handleAddIngredient = () => {
+    const newIngredient = {
+      id:
+        this.state.ingredients.reduce((curr, accum) => {
+          return curr.id > accum.id ? curr.id : accum.id;
+        }, 0) + 1,
+      ingredient: '',
+      measure: '',
+      quantity: ''
+    };
+    this.setState({
+      ingredients: [...this.state.ingredients, newIngredient]
+    });
+  };
+
+  handleAddInstruction = () => {
+    const newInstruction = {
+      id:
+        this.state.instructions.reduce((curr, accum) => {
+          return curr.id > accum.id ? curr.id : accum.id;
+        }, 0) + 1,
+      instruction: ''
+    };
+    this.setState({
+      instructions: [...this.state.instructions, newInstruction]
+    });
+  };
+
+  handleRemoveIngredient = index => {
+    this.setState({
+      ingredients: [
+        ...this.state.ingredients.slice(0, index),
+        ...this.state.ingredients.slice(index + 1)
+      ]
+    });
+  };
+  handleRemoveInstruction = index => {
+    this.setState({
+      instructions: [
+        ...this.state.ingredients.slice(0, index),
+        ...this.state.ingredients.slice(index + 1)
+      ]
     });
   };
 
@@ -35,8 +90,74 @@ class NewRecipe extends React.Component {
       padding: 20px;
       display: grid;
       grid-gap: 10px;
-      grid-template-rows: repeat(auto-fill, minmax(225px, 1fr));
       width: 100%;
+      .numbersGrid {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+        grid-gap: 20px;
+      }
+      .numField {
+        display: inline-block;
+      }
+      h3 {
+        font-size: 24px;
+      }
+      .ingGrid,
+      .instGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 130px;
+        align-items: start;
+        grid-column-gap: 20px;
+        button {
+          align-self: center;
+          margin-bottom: 20px;
+          background: lightpink;
+          &:hover {
+            background: #ffd7dd;
+          }
+        }
+      }
+      .addIngBtn,
+      .addInstBtn {
+        margin-top: 10px;
+        background: lightpink;
+        &:hover {
+          background: #ffd7dd;
+        }
+      }
+
+      .ingredientsGrid {
+        margin: 20px 0;
+      }
+
+      .instructionsGrid {
+        margin: 20px 0;
+        .instGrid {
+          span.step {
+            margin-bottom: -10px;
+            font-size: 18px;
+            font-weight: 500;
+          }
+          grid-template-columns: 1fr 130px;
+          align-items: center;
+          button {
+            align-self: center;
+            margin-bottom: -10px;
+          }
+        }
+      }
+
+      .submitDiv {
+        display: grid;
+        justify-items: end;
+        button {
+          background: lightpink;
+          &:hover {
+            background: #ffd7dd;
+          }
+        }
+      }
     `;
 
     return (
@@ -53,49 +174,152 @@ class NewRecipe extends React.Component {
           data-netlify-honeypot="bot-field"
         >
           <TextField
-            id="outlined-name"
+            required
             label="Name"
             className="textField"
             value={this.state.name}
-            onChange={this.handleChange('name')}
+            onChange={this.handleChange('title')}
             margin="normal"
             variant="outlined"
           />
           <TextField
             required
-            id="outlined-required"
-            label="Required"
-            defaultValue="Hello World"
+            label="Image URL"
             className="textField"
+            value={this.state.image}
+            onChange={this.handleChange('image')}
             margin="normal"
             variant="outlined"
           />
+          <div className="numbersGrid">
+            <TextField
+              required
+              label="Servings"
+              type="number"
+              className="textField numField"
+              value={this.state.serves || ''}
+              onChange={this.handleChange('serves')}
+              margin="normal"
+              variant="outlined"
+            />
+            <TextField
+              required
+              label="Time (minutes)"
+              type="number"
+              value={this.state.minutes || ''}
+              onChange={this.handleChange('minutes')}
+              className="textField numField"
+              margin="normal"
+              variant="outlined"
+            />
+          </div>
           <TextField
-            id="outlined-multiline-flexible"
-            label="Multiline"
+            label="Description"
             multiline
             rowsMax="4"
-            value={this.state.multiline}
-            onChange={this.handleChange('multiline')}
+            value={this.state.description}
+            onChange={this.handleChange('description')}
             className="textField"
             margin="normal"
-            helperText="hello"
+            helperText="Write a short description for your recipe"
             variant="outlined"
           />
-          <TextField
-            id="outlined-number"
-            label="Number"
-            value={this.state.age}
-            onChange={this.handleChange('age')}
-            type="number"
-            className="textField"
-            InputLabelProps={{
-              shrink: true
-            }}
-            margin="normal"
-            variant="outlined"
-          />
-          <Button>Submit</Button>
+          <div className="ingredientsGrid">
+            <h3>Ingredients</h3>
+            {this.state.ingredients.map((ing, index) => {
+              return (
+                <div className="ingGrid" key={ing.id}>
+                  <TextField
+                    value={ing.ingredient}
+                    label="Ingredient"
+                    onChange={this.handleChange(
+                      `ingredients[${index}].ingredient`
+                    )}
+                    className="textField"
+                    margin="normal"
+                    helperText="Please use the singular form: onion, tomato, etc."
+                    variant="outlined"
+                  />
+                  <TextField
+                    value={ing.quantity}
+                    type="number"
+                    label="Quantity"
+                    onChange={this.handleChange(
+                      `ingredients[${index}].quantity`
+                    )}
+                    className="textField"
+                    margin="normal"
+                    variant="outlined"
+                  />
+                  <TextField
+                    value={ing.measure}
+                    label="Measure"
+                    onChange={this.handleChange(
+                      `ingredients[${index}].measure`
+                    )}
+                    className="textField"
+                    margin="normal"
+                    helperText="unit: tbsp, tsp, cup, g, etc."
+                    variant="outlined"
+                  />
+                  <Button
+                    className="remIngBtn"
+                    onClick={() => this.handleRemoveIngredient(index)}
+                    variant="outlined"
+                  >
+                    Remove <CloseIcon style={{ margin: '0 -5 0 5' }} />
+                  </Button>
+                </div>
+              );
+            })}
+            <Button
+              className="addIngBtn"
+              onClick={this.handleAddIngredient}
+              variant="outlined"
+            >
+              Add Ingredient <AddIcon style={{ margin: '0 -5 0 5' }} />
+            </Button>
+          </div>
+          <div className="instructionsGrid">
+            <h3>Instructions</h3>
+            {this.state.instructions.map((inst, index) => {
+              return (
+                <div className="instGrid" key={inst.id}>
+                  <TextField
+                    value={inst.instruction}
+                    label={`step ${index + 1}`}
+                    onChange={this.handleChange(
+                      `instructions[${index}].instruction`
+                    )}
+                    className="textField"
+                    multiline
+                    max-rows="6"
+                    margin="normal"
+                    variant="outlined"
+                  />
+                  <Button
+                    className="remInstBtn"
+                    onClick={() => this.handleRemoveInstruction(index)}
+                    variant="outlined"
+                  >
+                    Remove <CloseIcon style={{ margin: '0 -5 0 5' }} />
+                  </Button>
+                </div>
+              );
+            })}
+            <Button
+              className="addInstBtn"
+              onClick={this.handleAddInstruction}
+              variant="outlined"
+            >
+              Add Step <AddIcon style={{ margin: '0 -5 0 5' }} />
+            </Button>
+          </div>
+          <div className="submitDiv">
+            <Button type="submit" size="large" variant="contained">
+              Submit
+            </Button>
+          </div>
         </Form>
       </Layout>
     );
