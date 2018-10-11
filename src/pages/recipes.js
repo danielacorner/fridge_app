@@ -73,12 +73,12 @@ class Recipes extends React.Component {
           }
           transition: all 0.5s cubic-bezier(0.02, 0.85, 0.21, 0.98);
         }
-        transition: all 0.5s cubic-bezier(0.02, 0.85, 0.21, 0.98);
+        transition: all 0.3s ease-in;
         &:hover {
           .image_div {
             box-shadow: 0px 3px 11px 1px #00000087;
             img {
-              transform: scale(1.05);
+              transform: scale(1.03);
             }
             .img_overlay {
               transform: translateX(0);
@@ -150,6 +150,7 @@ class Recipes extends React.Component {
           transition: all 0.2s ease-out;
           &:hover {
             box-shadow: 0px 3px 7px 1px #00000087;
+            background: rgba(0, 0, 0, 0.3);
           }
         }
         transform: translateX(-101%);

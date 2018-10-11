@@ -5,6 +5,13 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
+import styled from 'styled-components';
+
+const Container = styled.section`
+  padding-top: 16px;
+  max-width: 900px;
+  margin: auto;
+`;
 
 export const RecipePageTemplate = ({
   content,
@@ -17,7 +24,7 @@ export const RecipePageTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <Container>
       {helmet || ''}
       <div className="container content">
         <div className="columns">
@@ -42,16 +49,8 @@ export const RecipePageTemplate = ({
           </div>
         </div>
       </div>
-    </section>
+    </Container>
   );
-};
-
-RecipePageTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string
-  // helmet: PropTypes.instanceOf(Helmet)
 };
 
 const RecipePage = ({ data }) => {

@@ -17,6 +17,11 @@ const Header = styled.div`
   }
 `;
 
+const Container = styled.div`
+  padding-top: 16px;
+  margin: auto;
+  max-width: 900px;
+`;
 const Form = styled.form`
   padding: 20px;
   display: grid;
@@ -36,13 +41,13 @@ const Form = styled.form`
   }
   .ingGrid,
   .instGrid {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 50px;
+    display: grid;
     align-items: start;
     grid-column-gap: 20px;
     button {
-      align-self: center;
-      margin-bottom: 20px;
+      align-self: start;
+      margin-top: 12px;
       background: lightpink;
       min-width: 0;
 
@@ -50,6 +55,21 @@ const Form = styled.form`
         background: #ffd7dd;
       }
     }
+  }
+  .instGrid button {
+    margin-top: -4px;
+  }
+  .ingGrid {
+    display: grid;
+    align-items: start;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 50px;
+  }
+  .ingGridFields {
+    display: grid;
+    align-items: start;
+    grid-column-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
   .addIngBtn,
   .addInstBtn {
@@ -166,163 +186,165 @@ class NewRecipe extends React.Component {
   render() {
     return (
       <Layout>
-        <Header>
-          <h1>Submit a Recipe</h1>
-        </Header>
-        <Form
-          noValidate
-          autoComplete="off"
-          name="new-recipe"
-          method="post"
-          netlify
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          key="form"
-        >
-          <TextField
-            key="titlefield"
-            required
-            label="Name"
-            name="title"
-            className="textField"
-            onChange={this.handleChange}
-            value={this.state.title}
-            margin="dense"
-            variant="outlined"
-          />
-          <TextField
-            required
-            label="Image URL"
-            className="textField"
-            name="image"
-            onChange={this.handleChange}
-            value={this.state.image}
-            margin="dense"
-            variant="outlined"
-          />
-          <div className="numbersGrid">
+        <Container>
+          <Header>
+            <h1>Submit a Recipe</h1>
+          </Header>
+          <Form
+            noValidate
+            autoComplete="off"
+            name="new-recipe"
+            method="POST"
+            netlify
+          >
             <TextField
+              key="titlefield"
               required
-              label="Servings"
-              type="number"
-              className="textField numField"
-              name="serves"
+              label="Name"
+              name="title"
+              className="textField"
               onChange={this.handleChange}
+              value={this.state.title}
               margin="dense"
               variant="outlined"
             />
             <TextField
               required
-              label="Time (minutes)"
-              type="number"
-              name="minutes"
+              label="Image URL"
+              className="textField"
+              name="image"
               onChange={this.handleChange}
-              className="textField numField"
+              value={this.state.image}
               margin="dense"
               variant="outlined"
             />
-          </div>
-          <TextField
-            label="Description"
-            multiline
-            rowsMax="4"
-            name="description"
-            onChange={this.handleChange}
-            className="textField"
-            margin="dense"
-            helperText="Write a short description for your recipe"
-            variant="outlined"
-          />
-          <div className="ingredientsGrid">
-            <h3>Ingredients</h3>
-            {this.state.ingredients.map((ing, index) => {
-              return (
-                <div className="ingGrid" key={'ingredient_' + ing.id}>
-                  <TextField
-                    label="Ingredient"
-                    onChange={this.handleChange}
-                    name={`ingredients[${index}].ingredient`}
-                    className="textField"
-                    margin="dense"
-                    helperText="Please use the singular form: onion, tomato, etc."
-                    variant="outlined"
-                  />
-                  <TextField
-                    type="number"
-                    label="Quantity"
-                    onChange={this.handleChange}
-                    name={`ingredients[${index}].quantity`}
-                    className="textField"
-                    margin="dense"
-                    variant="outlined"
-                  />
-                  <TextField
-                    label="Measure"
-                    onChange={this.handleChange}
-                    name={`ingredients[${index}].measure`}
-                    className="textField"
-                    margin="dense"
-                    helperText="unit: tbsp, tsp, cup, g, etc."
-                    variant="outlined"
-                  />
-                  <Button
-                    className="remIngBtn"
-                    onClick={() => this.handleRemoveIngredient(index)}
-                    variant="outlined"
-                  >
-                    <CloseIcon />
-                  </Button>
-                </div>
-              );
-            })}
-            <Button
-              className="addIngBtn"
-              onClick={this.handleAddIngredient}
+            <div className="numbersGrid">
+              <TextField
+                required
+                label="Servings"
+                type="number"
+                className="textField numField"
+                name="serves"
+                onChange={this.handleChange}
+                margin="dense"
+                variant="outlined"
+              />
+              <TextField
+                required
+                label="Time (minutes)"
+                type="number"
+                name="minutes"
+                onChange={this.handleChange}
+                className="textField numField"
+                margin="dense"
+                variant="outlined"
+              />
+            </div>
+            <TextField
+              label="Description"
+              multiline
+              rowsMax="4"
+              name="description"
+              onChange={this.handleChange}
+              className="textField"
+              margin="dense"
+              helperText="Write a short description for your recipe"
               variant="outlined"
-            >
-              Add Ingredient <AddIcon style={{ margin: '0 -5 0 5' }} />
-            </Button>
-          </div>
-          <div className="instructionsGrid">
-            <h3>Instructions</h3>
-            {this.state.instructions.map((inst, index) => {
-              return (
-                <div className="instGrid" key={'instruction_' + inst.id}>
-                  <TextField
-                    label={`step ${index + 1}`}
-                    onChange={this.handleChange}
-                    name={`instructions[${index}].instruction`}
-                    // defaultValue={this.state.instructions[index].instruction}
-                    className="textField"
-                    multiline
-                    max-rows="6"
-                    margin="dense"
-                    variant="outlined"
-                  />
-                  <Button
-                    className="remInstBtn"
-                    onClick={() => this.handleRemoveInstruction(index)}
-                    variant="outlined"
-                  >
-                    <CloseIcon />
-                  </Button>
-                </div>
-              );
-            })}
-            <Button
-              className="addInstBtn"
-              onClick={this.handleAddInstruction}
-              variant="outlined"
-            >
-              Add Step <AddIcon style={{ margin: '0 -5 0 5' }} />
-            </Button>
-          </div>
-          <div className="submitDiv">
-            <Button type="submit" size="large" variant="contained">
-              Submit
-            </Button>
-          </div>
-        </Form>
+            />
+            <div className="ingredientsGrid">
+              <h3>Ingredients</h3>
+              {this.state.ingredients.map((ing, index) => {
+                return (
+                  <div className="ingGrid" key={'ingredient_' + ing.id}>
+                    <div className="ingGridFields">
+                      <TextField
+                        label="Ingredient"
+                        onChange={this.handleChange}
+                        name={`ingredients[${index}].ingredient`}
+                        className="textField"
+                        margin="dense"
+                        helperText="Please use the singular form: onion, tomato, carrot..."
+                        variant="outlined"
+                      />
+                      <TextField
+                        type="number"
+                        label="Quantity"
+                        onChange={this.handleChange}
+                        name={`ingredients[${index}].quantity`}
+                        className="textField"
+                        margin="dense"
+                        variant="outlined"
+                        helperText="how many?"
+                      />
+                      <TextField
+                        label="Measure"
+                        onChange={this.handleChange}
+                        name={`ingredients[${index}].measure`}
+                        className="textField"
+                        margin="dense"
+                        helperText="tbsp, tsp, cup, g..."
+                        variant="outlined"
+                      />
+                    </div>
+                    <Button
+                      className="remIngBtn"
+                      onClick={() => this.handleRemoveIngredient(index)}
+                      variant="outlined"
+                    >
+                      <CloseIcon />
+                    </Button>
+                  </div>
+                );
+              })}
+              <Button
+                className="addIngBtn"
+                onClick={this.handleAddIngredient}
+                variant="outlined"
+              >
+                Add Ingredient <AddIcon style={{ margin: '0 -5 0 5' }} />
+              </Button>
+            </div>
+            <div className="instructionsGrid">
+              <h3>Instructions</h3>
+              {this.state.instructions.map((inst, index) => {
+                return (
+                  <div className="instGrid" key={'instruction_' + inst.id}>
+                    <TextField
+                      label={`step ${index + 1}`}
+                      onChange={this.handleChange}
+                      name={`instructions[${index}].instruction`}
+                      // defaultValue={this.state.instructions[index].instruction}
+                      className="textField"
+                      multiline
+                      max-rows="6"
+                      margin="dense"
+                      variant="outlined"
+                    />
+                    <Button
+                      className="remInstBtn"
+                      onClick={() => this.handleRemoveInstruction(index)}
+                      variant="outlined"
+                    >
+                      <CloseIcon />
+                    </Button>
+                  </div>
+                );
+              })}
+              <Button
+                className="addInstBtn"
+                onClick={this.handleAddInstruction}
+                variant="outlined"
+              >
+                Add Step <AddIcon style={{ margin: '0 -5 0 5' }} />
+              </Button>
+            </div>
+            <div className="submitDiv">
+              <Button type="submit" size="large" variant="contained">
+                Submit
+              </Button>
+            </div>
+          </Form>
+        </Container>
       </Layout>
     );
   }

@@ -21,7 +21,7 @@ class SideNav extends React.Component {
           <ListItem>
             <IconText>
               <img
-                src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png"
+                src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png"
                 alt="Fridge"
                 style={{ height: 40, width: 'auto' }}
               />

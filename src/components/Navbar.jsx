@@ -114,7 +114,7 @@ class Navbar extends Component {
               <Link className="navbar-item" to="/recipes">
                 <IconText>
                   <img
-                    src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png"
+                    src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png"
                     alt="Recipes"
                     style={{ height: 40, width: 'auto' }}
                   />
