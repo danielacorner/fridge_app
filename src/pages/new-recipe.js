@@ -37,13 +37,15 @@ const Form = styled.form`
   .ingGrid,
   .instGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 130px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 50px;
     align-items: start;
     grid-column-gap: 20px;
     button {
       align-self: center;
       margin-bottom: 20px;
       background: lightpink;
+      min-width: 0;
+
       &:hover {
         background: #ffd7dd;
       }
@@ -70,11 +72,12 @@ const Form = styled.form`
         font-size: 18px;
         font-weight: 500;
       }
-      grid-template-columns: 1fr 130px;
+      grid-template-columns: 1fr 50px;
       align-items: center;
       button {
         align-self: center;
         margin-bottom: -10px;
+        min-width: 0;
       }
     }
   }
@@ -114,7 +117,6 @@ class NewRecipe extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     });
-    console.table(this.state);
   };
 
   handleAddIngredient = () => {
@@ -185,7 +187,7 @@ class NewRecipe extends React.Component {
             className="textField"
             onChange={this.handleChange}
             value={this.state.title}
-            margin="normal"
+            margin="dense"
             variant="outlined"
           />
           <TextField
@@ -195,7 +197,7 @@ class NewRecipe extends React.Component {
             name="image"
             onChange={this.handleChange}
             value={this.state.image}
-            margin="normal"
+            margin="dense"
             variant="outlined"
           />
           <div className="numbersGrid">
@@ -206,7 +208,7 @@ class NewRecipe extends React.Component {
               className="textField numField"
               name="serves"
               onChange={this.handleChange}
-              margin="normal"
+              margin="dense"
               variant="outlined"
             />
             <TextField
@@ -216,7 +218,7 @@ class NewRecipe extends React.Component {
               name="minutes"
               onChange={this.handleChange}
               className="textField numField"
-              margin="normal"
+              margin="dense"
               variant="outlined"
             />
           </div>
@@ -227,7 +229,7 @@ class NewRecipe extends React.Component {
             name="description"
             onChange={this.handleChange}
             className="textField"
-            margin="normal"
+            margin="dense"
             helperText="Write a short description for your recipe"
             variant="outlined"
           />
@@ -241,7 +243,7 @@ class NewRecipe extends React.Component {
                     onChange={this.handleChange}
                     name={`ingredients[${index}].ingredient`}
                     className="textField"
-                    margin="normal"
+                    margin="dense"
                     helperText="Please use the singular form: onion, tomato, etc."
                     variant="outlined"
                   />
@@ -251,7 +253,7 @@ class NewRecipe extends React.Component {
                     onChange={this.handleChange}
                     name={`ingredients[${index}].quantity`}
                     className="textField"
-                    margin="normal"
+                    margin="dense"
                     variant="outlined"
                   />
                   <TextField
@@ -259,7 +261,7 @@ class NewRecipe extends React.Component {
                     onChange={this.handleChange}
                     name={`ingredients[${index}].measure`}
                     className="textField"
-                    margin="normal"
+                    margin="dense"
                     helperText="unit: tbsp, tsp, cup, g, etc."
                     variant="outlined"
                   />
@@ -268,7 +270,7 @@ class NewRecipe extends React.Component {
                     onClick={() => this.handleRemoveIngredient(index)}
                     variant="outlined"
                   >
-                    Remove <CloseIcon style={{ margin: '0 -5 0 5' }} />
+                    <CloseIcon />
                   </Button>
                 </div>
               );
@@ -294,7 +296,7 @@ class NewRecipe extends React.Component {
                     className="textField"
                     multiline
                     max-rows="6"
-                    margin="normal"
+                    margin="dense"
                     variant="outlined"
                   />
                   <Button
@@ -302,7 +304,7 @@ class NewRecipe extends React.Component {
                     onClick={() => this.handleRemoveInstruction(index)}
                     variant="outlined"
                   >
-                    Remove <CloseIcon style={{ margin: '0 -5 0 5' }} />
+                    <CloseIcon />
                   </Button>
                 </div>
               );

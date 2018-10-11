@@ -1,6 +1,5 @@
 Current Goal:
-- debug: form clears on add ingredient
--
+- test netlify form submission
 
 - design recipe page
 
