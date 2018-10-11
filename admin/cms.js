@@ -2750,7 +2750,7 @@ function (_Component) {
       className: "navbar-item",
       to: "/recipes"
     }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(IconText, null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("img", {
-      src: "http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png",
+      src: "https://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png",
       alt: "Recipes",
       style: {
         height: 40,
@@ -23330,7 +23330,7 @@ function (_React$Component) {
       className: "navbar-item",
       to: "/recipes"
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(IconText, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-      src: "http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png",
+      src: "https://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/recipes-icon.png",
       alt: "Fridge",
       style: {
         height: 40,
@@ -27873,6 +27873,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(48);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(13);
 /* harmony import */ var _components_Content__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(351);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(298);
 
 
 
@@ -27881,6 +27882,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_8__["default"].section.withConfig({
+  displayName: "recipe-page__Container",
+  componentId: "sc-8uejuy-0"
+})(["padding-top:16px;max-width:900px;margin:auto;"]);
 var RecipePageTemplate = function RecipePageTemplate(_ref) {
   var content = _ref.content,
       contentComponent = _ref.contentComponent,
@@ -27889,9 +27895,7 @@ var RecipePageTemplate = function RecipePageTemplate(_ref) {
       title = _ref.title,
       helmet = _ref.helmet;
   var PostContent = contentComponent || _components_Content__WEBPACK_IMPORTED_MODULE_7__["default"];
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-    className: "section"
-  }, helmet || '', react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, null, helmet || '', react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "container content"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "columns"
@@ -27914,13 +27918,6 @@ var RecipePageTemplate = function RecipePageTemplate(_ref) {
       to: "/tags/" + Object(lodash__WEBPACK_IMPORTED_MODULE_3__["kebabCase"])(tag) + "/"
     }, tag));
   }))) : null))));
-};
-RecipePageTemplate.propTypes = {
-  content: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.node.isRequired,
-  contentComponent: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
-  description: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
-  title: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string // helmet: PropTypes.instanceOf(Helmet)
-
 };
 
 var RecipePage = function RecipePage(_ref2) {
